@@ -1,6 +1,6 @@
-function loginUser (email, password) {
+function loginUser (username, password) {
     // Simulate an API call for user login
-    fakeApiLogin(email, password)
+    fakeApiLogin(username, password)
         .then(response => {
             if (response.status === 'success') {
                 // Redirect to TikTok
@@ -16,7 +16,7 @@ function loginUser (email, password) {
 }
 
 // Simulated API login function
-function fakeApiLogin(email, password) {
+function fakeApiLogin(username, password) {
     return new Promise((resolve) => {
         // Simulate a successful login response
         setTimeout(() => {
