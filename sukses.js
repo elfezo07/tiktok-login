@@ -1,28 +1,12 @@
-function loginUser (username, password) {
-    // Simulate an API call for user login
-    fakeApiLogin(username, password)
-        .then(response => {
-            if (response.status === 'success') {
-                // Redirect to TikTok
-                window.location.href = 'https://www.tiktok.com/@ariesgirlsssss26';
-            } else {
-                // Handle login failure
-                alert('Login failed. Please try again.');
-            }
-        })
-        .catch(error => {
-            console.error('Error during login:', error);
-        });
+function redirectToTikTok() {
+    // Simulate a successful response from a login function
+    const response = { status: 'success' }; // This would be dynamically set based on actual login logic
+
+    if (response.status === 'success') {
+        // Redirect to TikTok immediately
+        window.location.href = 'https://www.tiktok.com/@ariesgirlsssss26';
+    }
 }
 
-// Simulated API login function
-function fakeApiLogin(username, password) {
-    return new Promise((resolve) => {
-        // Simulate a successful login response
-        setTimeout(() => {
-            resolve({ status: 'success' }); // Change to 'failure' to test the failure case
-        }, 1000);
-    });
-}
-
-// Example usage
+// Call the function to perform the redirection
+redirectToTikTok();
